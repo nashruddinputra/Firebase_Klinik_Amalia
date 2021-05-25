@@ -15,8 +15,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity /*implements NavigationView.OnNavigationItemSelectedListener*/ {
 
@@ -78,6 +85,22 @@ public class MainActivity extends AppCompatActivity /*implements NavigationView.
                     default:
                         return false;
                 }
+            }
+        });
+
+        c_Antrian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                Date c = Calendar.getInstance().getTime();
+
+                SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+                String formattedDate = df.format(c);
+                DatabaseReference myRef = database.getReference("Antrian").child(formattedDate).child(String.valueOf(System.currentTimeMillis())).child("user_id");
+
+
+                String userid = fAuth.getCurrentUser().getUid();
+                myRef.setValue(userid);
             }
         });
 
