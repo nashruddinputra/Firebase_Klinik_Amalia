@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Firebase_Klinik_Amalia</string>
+    <string name="login_name">LOGIN</string>
+    <string name="register_name">REGISTER</string>
+    <string name="username">Username</string>
+    <string name="phone">Phone Number</string>
+    <string name="Email">E-Mail</string>
+    <string name="password">******</string>
+    <string name="show_pass">Show Password</string>
+    <string name="btn_masuk">Masuk</string>
+    <string name="btn_register">Daftar</string>
+    <string name="btn_pasien">Login Pasien</string>
+    <string name="btn_dokter">Login Dokter</string>
+    <string name="btn_admin">Admin</string>
+    <string name="home">Home</string>
+    <string name="queue">Antrian</string>
+    <string name="jadwal_imunisasi">Jadwal Imunisasi</string>
+    <string name="konsultasi">Konsultasi</string>
+    <string name="halaman_awal">Selamat Datang di Klinik Amalia</string>
+    <string name="klik_untuk_daftar">Klik disini untuk mendaftar.</string>
+    <string name="klik_untuk_masuk">Klik disini untuk masuk.</string>
+    <string name="Profile">Profile</string>
+    <string name="Tentang">Tentang</string>
+    <string name="Logout">Logout</string>
+</resources>

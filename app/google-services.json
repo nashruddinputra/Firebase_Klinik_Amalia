@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "82975048010",
+    "project_id": "klinik-amalia",
+    "storage_bucket": "klinik-amalia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:82975048010:android:00632aeda377710cad01b3",
+        "android_client_info": {
+          "package_name": "com.example.klinikamalia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "82975048010-3gubbsiak4ekgc42t3lmh4equaebnhl1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlSXi7OgfPGPpQZejJNtsYhyD1RXdJgtM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "82975048010-3gubbsiak4ekgc42t3lmh4equaebnhl1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
