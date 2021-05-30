@@ -1,7 +1,6 @@
 package com.example.klinikamalia;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -15,60 +14,86 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
+import static com.example.klinikamalia.AntrianActivity.EXTRA_USER;
 
-public class MainActivity extends AppCompatActivity /*implements NavigationView.OnNavigationItemSelectedListener*/ {
+public class MainActivity extends AppCompatActivity {
 
     private View btnHumb;
     private NavigationView navView;
     private DrawerLayout drawerLayout;
     private TextView tvUsername;
-    private FirebaseAuth fAuth;
-    private LinearLayout c_Antrian, c_Jadwal, c_Konsultasi;
+    private FirebaseUser user;
+    private LinearLayout c_Antrian, c_Jadwal, c_Konsultasi, c_Lokasi;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        fAuth = FirebaseAuth.getInstance();
+        user = FirebaseAuth.getInstance().getCurrentUser();
 
         btnHumb = findViewById(R.id.btn_humberger);
         navView = findViewById(R.id.nav_view);
-        drawerLayout = findViewById(R.id.drawer_layout);
+        drawerLayout = findViewById(R.id.drawer_layout_main);
         c_Antrian = findViewById(R.id.container_antrian);
         c_Jadwal = findViewById(R.id.container_jadwal);
         c_Konsultasi = findViewById(R.id.container_konsultasi);
+        c_Lokasi = findViewById(R.id.container_lokasi);
 
         View headerView = navView.getHeaderView(0);
         tvUsername = headerView.findViewById(R.id.text_username);
-        String username = fAuth.getCurrentUser().getDisplayName();
+        String username = user.getDisplayName();
         if (username == null) {
-            username = "Belum Di isi";
+            username = "Empty";
         }
         tvUsername.setText(username);
-
-        btnHumb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                drawerLayout.open();
-            }
-        });
 
         c_Konsultasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openWhatsappContact("+6281578743265");
+                startActivity(new Intent(MainActivity.this, KonsultasiActivity.class));
+//                KonsultasiActivity
             }
         });
+
+        c_Lokasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, MapsActivity.class));
+            }
+        });
+
+
+        c_Antrian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AntrianActivity.class);
+                intent.putExtra(EXTRA_USER, user);
+                startActivity(intent);
+            }
+        });
+
+        c_Jadwal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, JadwalActivity.class));
+            }
+        });
+
+        btnHumb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                drawerLayout.open();
+            }
+        });
+
+        FirebaseAuth.getInstance().signOut();
 
         //mengaktifkan tombol navigasi dan onclick pada setiap item menu
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -77,40 +102,30 @@ public class MainActivity extends AppCompatActivity /*implements NavigationView.
                 Log.d("TAG", "onNavigationItemSelected: " + item.getItemId());
                 switch (item.getItemId()) {
                     case R.id.btn_logout:
-                        fAuth.signOut();
+//                        fAuth.signOut();
                         Intent intent = new Intent(getApplicationContext(), Halaman_awal.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
-                        return true;
-                    default:
+                        finish();
+
+                        return false;
+
+                    case R.id.tentang:
+                        Intent i = new Intent(getApplicationContext(), TentangActivity.class);
+                        startActivity(i);
+
+                        return false;
+
+                    case R.id.profile:
+                        Intent t = new Intent(getApplicationContext(),activity_profile.class );
+                        startActivity(t);
+
                         return false;
                 }
+                return true;
             }
+
         });
 
-        c_Antrian.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                Date c = Calendar.getInstance().getTime();
-
-                SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
-                String formattedDate = df.format(c);
-                DatabaseReference myRef = database.getReference("Antrian").child(formattedDate).child(String.valueOf(System.currentTimeMillis())).child("user_id");
-
-
-                String userid = fAuth.getCurrentUser().getUid();
-                myRef.setValue(userid);
-            }
-        });
-
-    }
-    //memanggil fungsi openWhatsappContact dari variable c_Konsultasi
-    void openWhatsappContact(String number) {
-        Log.d("TAG", "openWhatsappContact: ");
-        Uri uri = Uri.parse("smsto:" + number);
-        Intent i = new Intent(Intent.ACTION_SENDTO, uri);
-        i.setPackage("com.whatsapp");
-        startActivity(Intent.createChooser(i, ""));
     }
 }

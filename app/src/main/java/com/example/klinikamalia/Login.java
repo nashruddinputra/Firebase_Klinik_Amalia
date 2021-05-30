@@ -66,14 +66,12 @@ public class Login extends AppCompatActivity {
                     return;
                 }
 
-
-
                 // Loginuser firebase
                 fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(Login.this,"Login Berhasil.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this,"Login Berhasil", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
@@ -106,5 +104,4 @@ public class Login extends AppCompatActivity {
         });
 
     }
-
 }

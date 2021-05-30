@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@drawable/background1"
+    android:background="@drawable/g_background_birutua"
     tools:context=".Register">
 
     <LinearLayout
@@ -24,7 +24,7 @@
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="20dp"
-            android:background="@drawable/roundedlayout"
+            android:background="@drawable/a_roundedlayout_putih"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="20dp">
 
@@ -33,7 +33,7 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_marginTop="5dp"
-                android:src="@drawable/bidan_delima"/>
+                android:src="@drawable/g_bidan_delima"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -52,13 +52,13 @@
                 android:layout_gravity="start"
                 android:layout_marginTop="30dp"
                 android:hint="@string/username"
-                android:drawableLeft="@drawable/account_art"
+                android:drawableLeft="@drawable/a_account_art"
                 android:drawablePadding="7dp"
                 android:inputType="textPersonName"
                 android:textAlignment="viewStart"
                 android:textSize="17sp"
                 android:singleLine="true"
-                android:drawableStart="@drawable/account_art"
+                android:drawableStart="@drawable/a_account_art"
                 android:importantForAutofill="no" />
 
             <EditText
@@ -73,8 +73,8 @@
                 android:singleLine="true"
                 android:textAlignment="viewStart"
                 android:layout_gravity="start"
-                android:drawableStart="@drawable/phone_art"
-                android:drawableLeft="@drawable/phone_art"
+                android:drawableStart="@drawable/a_phone_art"
+                android:drawableLeft="@drawable/a_phone_art"
                 android:importantForAutofill="no" />
 
             <EditText
@@ -83,14 +83,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:hint="@string/Email"
-                android:drawableLeft="@drawable/email_art"
+                android:drawableLeft="@drawable/a_email_art"
                 android:drawablePadding="7dp"
                 android:inputType="textEmailAddress"
                 android:textSize="17sp"
                 android:singleLine="true"
                 android:textAlignment="viewStart"
                 android:layout_gravity="start"
-                android:drawableStart="@drawable/email_art"
+                android:drawableStart="@drawable/a_email_art"
                 android:importantForAutofill="no" />
 
             <EditText
@@ -99,14 +99,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:hint="@string/password"
-                android:drawableLeft="@drawable/lock_art"
+                android:drawableLeft="@drawable/a_lock_art"
                 android:drawablePadding="7dp"
                 android:inputType="textPassword"
                 android:textSize="17sp"
                 android:singleLine="true"
                 android:textAlignment="viewStart"
                 android:layout_gravity="start"
-                android:drawableStart="@drawable/lock_art"
+                android:drawableStart="@drawable/a_lock_art"
                 android:importantForAutofill="no" />
 
             <CheckBox
@@ -121,11 +121,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/roundedbutton"
+                android:background="@drawable/a_roundedbutton_putihbiru"
                 android:text="@string/btn_register"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
                 android:textStyle="bold"
+                android:shadowRadius="@integer/config_navAnimTime"
                 android:foreground="?attr/selectableItemBackground"/>
 
             <TextView
@@ -136,8 +137,10 @@
                 android:text="@string/klik_untuk_masuk"
                 android:textAllCaps="false"
                 android:textSize="15sp"
+                android:textColor="@color/blue_link"
                 android:layout_gravity="center_horizontal"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:shadowRadius="@integer/config_navAnimTime"/>
 
         </LinearLayout>
 

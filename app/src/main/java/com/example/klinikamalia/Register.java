@@ -31,6 +31,7 @@ public class Register extends AppCompatActivity {
     private CheckBox showPassword;
     private ProgressBar Progress;
     private FirebaseAuth fAuth;
+//    private FirebaseDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,8 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         fAuth = FirebaseAuth.getInstance();
+
+//        database = FirebaseDatabase.getInstance();
 
         myEmail = findViewById(R.id.et_email);
         myPassword = findViewById(R.id.et_password);
@@ -90,14 +93,19 @@ public class Register extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+
                             UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                                     .setDisplayName(myUsername.getText().toString())
                                     .build();
+//                            String userid = fAuth.getCurrentUser().getUid();
+//                            DatabaseReference myRef = database.getReference("user").child(userid).child("phone_number");
+//                            myRef.setValue(myPhone.getText().toString());
+
                             fAuth.getCurrentUser().updateProfile(profileUpdates).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull @NotNull Task<Void> task) {
                                     Toast.makeText(Register.this,"Daftar Berhasil.", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                                    Intent intent = new Intent(Register.this,MainActivity.class);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     startActivity(intent);
                                 }

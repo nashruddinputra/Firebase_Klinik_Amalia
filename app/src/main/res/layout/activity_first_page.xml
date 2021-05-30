@@ -1,67 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gedung_klinik"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Halaman_awal">
+    tools:context=".Halaman_awal"
+    android:orientation="vertical"
+    android:background="@drawable/g_background_birutua">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_marginTop="60dp"
+        android:background="@drawable/a_roundedlayout_putih"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="60dp"
-            android:background="@drawable/roundedlayout"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/halaman_awal"
-                android:layout_gravity="center_vertical"
-                android:padding="10dp"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
-
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/tv_selamat_datang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="400dp">
+            android:text="@string/halaman_awal"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/black"/>
 
-            <android.widget.Button
-                android:id="@+id/Login_pasien"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:text="@string/btn_pasien"
-                android:textStyle="bold"
-                android:background="@drawable/roundedbutton"
-                android:foreground="?attr/selectableItemBackground"/>
+        <ImageView
+            android:id="@+id/img_klinik"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@drawable/g_icon_klinik"
+            android:layout_below="@+id/tv_selamat_datang"/>
 
-            <android.widget.Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
-                android:text="@string/btn_admin"
-                android:textStyle="bold"
-                android:background="@drawable/roundedbutton2"
-                android:foreground="?attr/selectableItemBackground"/>
+        <android.widget.Button
+            android:id="@+id/Login_pasien"
+            android:layout_below="@+id/img_klinik"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/btn_pasien"
+            android:textStyle="bold"
+            android:background="@drawable/a_roundedbutton_putihbiru"
+            android:shadowRadius="@integer/config_navAnimTime"
+            android:foreground="?attr/selectableItemBackground"/>
 
-        </LinearLayout>
+        <android.widget.Button
+            android:layout_below="@+id/Login_pasien"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/btn_admin"
+            android:textStyle="bold"
+            android:background="@drawable/a_roundedbutton_hijau"
+            android:shadowRadius="@integer/config_navAnimTime"
+            android:foreground="?attr/selectableItemBackground"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 
-</RelativeLayout>
+</LinearLayout>

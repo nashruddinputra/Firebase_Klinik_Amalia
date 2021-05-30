@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Firebase_Klinik_Amalia</string>
+    <string name="app_name">Klinik Amalia</string>
     <string name="login_name">LOGIN</string>
     <string name="register_name">REGISTER</string>
     <string name="username">Username</string>
@@ -10,16 +10,29 @@
     <string name="btn_masuk">Masuk</string>
     <string name="btn_register">Daftar</string>
     <string name="btn_pasien">Login Pasien</string>
-    <string name="btn_dokter">Login Dokter</string>
     <string name="btn_admin">Admin</string>
+    <string name="btn_ambil_antrian">Klik untuk ambil antrian</string>
     <string name="home">Home</string>
     <string name="queue">Antrian</string>
-    <string name="jadwal_imunisasi">Jadwal Imunisasi</string>
+    <string name="informasi">Informasi</string>
+    <string name="jadwal_bidan">Jadwal Shift Bidan</string>
     <string name="konsultasi">Konsultasi</string>
+    <string name="lokasi">Lokasi</string>
     <string name="halaman_awal">Selamat Datang di Klinik Amalia</string>
     <string name="klik_untuk_daftar">Klik disini untuk mendaftar.</string>
     <string name="klik_untuk_masuk">Klik disini untuk masuk.</string>
-    <string name="Profile">Profile</string>
-    <string name="Tentang">Tentang</string>
-    <string name="Logout">Logout</string>
+    <string name="profile">Profile</string>
+    <string name="tentang">Tentang</string>
+    <string name="logout">Logout</string>
+    <string name="title_antrian">Antrian Saat Ini</string>
+    <string name="title_antrian_total">Total Antrian</string>
+    <string name="title_antrian2">Catatan: Antrian ini mungkin bisa berbeda dari antrian yang sedang berlangsung di dalam Klinik Amalia</string>
+    <string name="title_konsul">: Klik untuk menghubungi nomor telepon Kantor</string>
+    <string name="title_konsul2">: Klik untuk menghubungi nomor telepon Whatsapp</string>
+    <string name="user_profile">User Profile</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="menutentang">Klinik Amalia.APK</string>
+    <string name="menutentang2">Created by: Nashruddin Putra Pratama</string>
+    <string name="menutentang3">Email     : pratamaputranashruddin@gmail.com</string>
+    <string name="menutentang4">WA        : 089603906966</string>
 </resources>

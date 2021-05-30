@@ -5,18 +5,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/image_layout">
+    android:background="@drawable/g_image_layout">
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:id="@+id/user_image"
-        android:src="@drawable/account_art"/>
+        android:src="@drawable/a_account_art"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/text_username"
-        android:text="@string/username"/>
+        android:text="@string/username"
+        android:textSize="17sp"/>
 
 </LinearLayout>

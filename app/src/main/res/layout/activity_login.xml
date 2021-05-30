@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@drawable/background1"
+    android:background="@drawable/g_background_birutua"
     tools:context=".Login">
 
     <LinearLayout
@@ -22,7 +22,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/roundedlayout"
+            android:background="@drawable/a_roundedlayout_putih"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="20dp">
@@ -31,7 +31,7 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_marginTop="5dp"
-                android:src="@drawable/bidan_delima"
+                android:src="@drawable/g_bidan_delima"
                 tools:ignore="ContentDescription" />
 
             <TextView
@@ -50,8 +50,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_marginTop="30dp"
-                android:drawableStart="@drawable/email_art"
-                android:drawableLeft="@drawable/email_art"
+                android:drawableStart="@drawable/a_email_art"
+                android:drawableLeft="@drawable/a_email_art"
                 android:drawablePadding="7dp"
                 android:hint="@string/Email"
                 android:inputType="textEmailAddress"
@@ -67,8 +67,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:layout_marginTop="15dp"
-                android:drawableStart="@drawable/lock_art"
-                android:drawableLeft="@drawable/lock_art"
+                android:drawableStart="@drawable/a_lock_art"
+                android:drawableLeft="@drawable/a_lock_art"
                 android:drawablePadding="7dp"
                 android:hint="@string/password"
                 android:importantForAutofill="no"
@@ -90,12 +90,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/roundedbutton"
+                android:background="@drawable/a_roundedbutton_putihbiru"
+                android:foreground="?attr/selectableItemBackground"
+                android:shadowRadius="@integer/config_navAnimTime"
                 android:text="@string/btn_masuk"
                 android:textAllCaps="false"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:foreground="?attr/selectableItemBackground"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/btn_daftar"
@@ -103,8 +104,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
+                android:shadowRadius="@integer/config_navAnimTime"
                 android:text="@string/klik_untuk_daftar"
                 android:textAlignment="center"
+                android:textColor="@color/blue_link"
                 android:textSize="15sp" />
 
         </LinearLayout>
